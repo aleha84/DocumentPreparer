@@ -25,6 +25,36 @@ namespace UnitTestProject1.Data
             {
                 return new Abisoft
                 {
+                    PDfName = "недобросовестный-поставщик ООО АБИСОФТ бизнес справка",
+                    DocumentModel = new DocumentModel
+                    {
+                        GeneralInfoBlock = new GeneralInfoBlock
+                        {
+                            ShortName = @"ООО ""АБИСОФТ""",
+                            FullName = @"ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ ""АБИСОФТ""",
+                            INN = "7716212993",
+                            InitialRegistrationDate = "08.01.2002"
+                        },
+                        FoundersLE = new FounderLE[]
+                        {
+                            new FounderLE()
+                        },
+                        FoundersNP = new FounderNP[]
+                        {
+                            new FounderNP
+                            {
+                                FullName = "ВОРОНИН СЕРГЕЙ ВИКТОРОВИЧ",
+                                INN = "772729678426",
+                                Share = "50"
+                            },
+                            new FounderNP
+                            {
+                                FullName = "ПЫЛЬЦОВ ВАДИМ ВЯЧЕСЛАВОВИЧ",
+                                INN = "561441936069",
+                                Share = "50",
+                            }
+                        },
+                    }, 
                     DataName = "Abisoft",
                     GeneralInfo = new GeneralInfoBlock
                     {
@@ -61,6 +91,7 @@ namespace UnitTestProject1.Data
                             Share = "50",
                         }
                     },
+                    Blocks2 = null,
                     Blocks = new Dictionary<string, string> {
                         { "Affiliation", @"
 УЧРЕДИТЕЛИ АФФИЛИРОВАННОСТЬ

@@ -10,11 +10,14 @@ namespace UnitTestProject1.Data
     public class Megapolis : ITestData
     {
         public Dictionary<string, string> Blocks { get; set; }
+        public IDictionary<string, string> Blocks2 { get; set; }
         public string DataName { get; set; }
+        public string PDfName { get; set; }
         public GeneralInfoBlock GeneralInfo { get; set; }
         public FounderNP[] FoundersNP { get; set; }
         public FounderLE[] FoundersLE { get; set; }
         public decimal AuthirizedCapital { get; set; }
+        public DocumentModel DocumentModel { get; set; }
 
         public static Megapolis Instance {
             get
@@ -22,6 +25,7 @@ namespace UnitTestProject1.Data
                 return new Megapolis
                 {
                     DataName = "Megapolis",
+                    PDfName = "ООО МЕГАПОЛИС СЕРВИС бизнес справка",
                     AuthirizedCapital = 1000000m,
                     GeneralInfo = new GeneralInfoBlock
                     {
@@ -48,7 +52,27 @@ namespace UnitTestProject1.Data
                             Share = "85"
                         }
                     },
-                    Blocks = new Dictionary<string, string> {
+                    DocumentModel = new DocumentModel
+                    {
+                     EstablishedEnterprise = new[]
+                     {
+                         new DocumentPreparer.Models.EstablishedEnterprise()
+                         {
+                             Address = @"630005,ОБЛАСТЬ НОВОСИБИРСКАЯ, ГОРОД НОВОСИБИРСК, УЛИЦА КАМЕНСКАЯ,53",
+                             INN = "5406510876",
+                             Name = @"ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ ""МЕГАПОЛИС-СЕРВИС СИБИРЬ""",
+                             OGRN = "1085406046000",
+                             Share = string.Empty
+                         }                     }   
+                    },
+                    Blocks2 = null,
+                        Blocks = new Dictionary<string, string> {
+                        {"EstablishedEnterprises", @"
+1. ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ ""МЕГАПОЛИС-СЕРВИС СИБИРЬ""
+630005,ОБЛАСТЬ НОВОСИБИРСКАЯ,,ГОРОД НОВОСИБИРСК,,УЛИЦА КАМЕНСКАЯ,53
+ОГРН: 1085406046000, ИНН: 5406510876, Размер вклада: 8 000,00 руб
+69
+"},
                         { "GeneralInfo", @"
 Всего компаний: 4. Подробнее смотрите на стр. 
  

@@ -13,10 +13,8 @@ namespace DocumentPreparer.Blocks
     {
         private string pattern = @"(\d+\.\s(?<name>[\S\s]+?)(?<address>\d+\s?,\s?[\S\s]+?)огрн:\s(?<ogrn>\d+),\sинн:\s(?<inn>\d+)[\S\s]+?(доля:\s(?<share>\d+\.\d*%)|$))";
 
-        private readonly IDictionary<string, PropertyRetriever> _propertiesRetrieversNamed;
-        public EstablishedEnterprisesBlock(IDictionary<string, PropertyRetriever> propertiesRetrieversNamed)
+        public EstablishedEnterprisesBlock()
         {
-            _propertiesRetrieversNamed = propertiesRetrieversNamed;
         }
 
         public EstablishedEnterprise[] Get(string ee)
@@ -34,7 +32,7 @@ namespace DocumentPreparer.Blocks
                 {
                     Address = CommonHelper.MultiLineProcesser(m.Groups["address"].Value),
                     INN = m.Groups["inn"].Value,
-                    Name = CommonHelper.MultiLineJoiner(m.Groups["name"].Value),
+                    Name = CommonHelper.MultiLineProcesser(m.Groups["name"].Value),
                     OGRN = m.Groups["ogrn"].Value,
                     Share = m.Groups["share"].Value
                 });

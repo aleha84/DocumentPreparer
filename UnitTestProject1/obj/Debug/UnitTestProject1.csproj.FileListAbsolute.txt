@@ -9,3 +9,16 @@ D:\development\docsProcesser\DocumentPreparer\UnitTestProject1\bin\Debug\Documen
 D:\development\docsProcesser\DocumentPreparer\UnitTestProject1\bin\Debug\nunit.framework.xml
 D:\development\docsProcesser\DocumentPreparer\UnitTestProject1\obj\Debug\UnitTestProject1.dll
 D:\development\docsProcesser\DocumentPreparer\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
+C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\DocumentPreparer.exe
+C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\nunit.framework.dll
+C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\DocX.dll
+C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\itextsharp.dll
+C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\DocumentPreparer.pdb
+C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\nunit.framework.xml
+C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
+C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
+C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\ООО МЕГАПОЛИС СЕРВИС бизнес справка.pdf
+C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\управляющая-компания ЗАО КТСП бизнес справка.pdf

@@ -74,9 +74,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="PDFs\дочерние компании ООО ГАЛАФОР бизнес справка.pdf" />
+    <None Include="PDFs\иной-негатив-изменение-наименования АО БРИКС ИТ бизнес справка.pdf" />
+    <None Include="PDFs\недобросовестный-поставщик ООО АБИСОФТ бизнес справка.pdf" />
+    <None Include="PDFs\ОО КОМПАНИЯ НОВЫЙ ДИАЛОГ бизнес справка.pdf" />
+    <None Include="PDFs\ООО ВЕКТОР ЧИСТОТЫ бизнес справка.pdf" />
+    <None Include="PDFs\ООО КОМПАНИЯ РВС бизнес справка.pdf" />
     <None Include="PDFs\ООО МЕГАПОЛИС СЕРВИС бизнес справка.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="PDFs\ООО ОТЕЛЬ СИТИ бизнес справка.pdf" />
     <None Include="PDFs\управляющая-компания ЗАО КТСП бизнес справка.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

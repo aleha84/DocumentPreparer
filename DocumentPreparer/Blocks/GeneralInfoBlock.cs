@@ -18,6 +18,9 @@ namespace DocumentPreparer.Blocks
 
         public Models.GeneralInfoBlock Get(string input)
         {
+            if (input.IsNullOrEmpty())
+                throw new ArgumentNullException("input");
+                    
             var result = new Models.GeneralInfoBlock();
 
             var properties = typeof(Models.GeneralInfoBlock).GetProperties();

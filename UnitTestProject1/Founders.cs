@@ -6,6 +6,9 @@ using DocumentPreparer.Blocks;
 using DocumentPreparer.Retrievers;
 using DocumentPreparer.Models;
 using UnitTestProject1.Data;
+using UnitTestProject1.DataProviders;
+using DocumentPreparer.Extensions;
+using DocumentPreparer.Refs;
 
 namespace UnitTestProject1
 {
@@ -20,21 +23,12 @@ namespace UnitTestProject1
             _propertiesRetrievers = new PropertiesRetrievers();
         }
 
-        static object[] TestDataCaseSource =
-        {
-            new object[]{  Megapolis.Instance.DataName, Megapolis.Instance },
-            new object[]{ KTSP.Instance.DataName, KTSP.Instance },
-            new object[]{ OtelCity.Instance.DataName, OtelCity.Instance },
-            new object[]{ Briks.Instance.DataName, Briks.Instance },
-            new object[]{ Abisoft.Instance.DataName, Abisoft.Instance }
-        };
-
         [Test]
-        [TestCaseSource("TestDataCaseSource")]
+        [TestCaseSource(typeof(TestDataProvider), "TestCaseSources")]
         public void GetAuthorizedCapital(string DataName, ITestData testData)
         {
             var fb = new FoundersBlock(_propertiesRetrievers.Get());
-            fb.SetBlocks(testData.Blocks["ExtractFromEGRUL"], "");
+            fb.SetBlocks(testData.Blocks2.GetByKeyOrEmpty(BlockHeadersRefs.ExtractFromEGRUL), "");
 
             var ac = fb.GetAuthorizedCapital();
 
@@ -42,19 +36,19 @@ namespace UnitTestProject1
         }
 
         [Test(Description = "Учредители ЮЛ")]
-        [TestCaseSource("TestDataCaseSource")]
+        [TestCaseSource(typeof(TestDataProvider), "TestCaseSources")]
         public void GetLE(string DataName, ITestData testData)
         {
             var fb = new FoundersBlock(_propertiesRetrievers.Get());
-            fb.SetBlocks(testData.Blocks["ExtractFromEGRUL"], "");
+            fb.SetBlocks(testData.Blocks2.GetByKeyOrEmpty(BlockHeadersRefs.ExtractFromEGRUL), "");
 
             var fle = fb.GetLE();
-
-            Assert.AreEqual(testData.FoundersLE.Length, fle.Length, "Incorrect count of precessed counters, must be {0} but was {1}", testData.FoundersLE.Length, fle.Length);
-            for(var i = 0; i < testData.FoundersLE.Length; i++)
+            var expectedLE = testData.DocumentModel.FoundersLE;
+            Assert.AreEqual(expectedLE.Length, fle.Length, "Incorrect count of precessed counters, must be {0} but was {1}", expectedLE.Length, fle.Length);
+            for(var i = 0; i < expectedLE.Length; i++)
             {
                 var flei = fle[i];
-                var foundersLEi = testData.FoundersLE[i];
+                var foundersLEi = expectedLE[i];
                 StringAssert.AreEqualIgnoringCase(foundersLEi.Address, flei.Address, "Incorrect address at index {0}, must be {1} but was {2}", i, foundersLEi.Address, flei.Address);
                 StringAssert.AreEqualIgnoringCase(foundersLEi.INN, flei.INN, "Incorrect INN at index {0}, must be {1} but was {2}", i, foundersLEi.INN, flei.INN);
                 StringAssert.AreEqualIgnoringCase(foundersLEi.Name, flei.Name, "Incorrect Name at index {0}, must be {1} but was {2}", i, foundersLEi.Name, flei.Name);
@@ -64,19 +58,19 @@ namespace UnitTestProject1
         }
 
         [Test(Description = "Учредители ФЛ")]
-        [TestCaseSource("TestDataCaseSource")]
+        [TestCaseSource(typeof(TestDataProvider), "TestCaseSources")]
         public void GetNP(string DataName, ITestData testData)
         {
             var fb = new FoundersBlock(_propertiesRetrievers.Get());
-            fb.SetBlocks(testData.Blocks["ExtractFromEGRUL"], testData.Blocks["Affiliation"]);
+            fb.SetBlocks(testData.Blocks2.GetByKeyOrEmpty(BlockHeadersRefs.ExtractFromEGRUL), testData.Blocks2.GetByKeyOrEmpty(BlockHeadersRefs.Affiliation));
 
             var fnp = fb.GetNP();
-
-            Assert.AreEqual(testData.FoundersNP.Length, fnp.Length, "Incorrect count of precessed counters, must be {0} but was {1}", testData.FoundersNP.Length, fnp.Length);
-            for (var i = 0; i < testData.FoundersNP.Length; i++)
+            var expectedNP = testData.DocumentModel.FoundersNP;
+            Assert.AreEqual(expectedNP.Length, fnp.Length, "Incorrect count of precessed counters, must be {0} but was {1}", expectedNP.Length, fnp.Length);
+            for (var i = 0; i < expectedNP.Length; i++)
             {
                 var fnpi = fnp[i];
-                var foundersNPi = testData.FoundersNP[i];
+                var foundersNPi = expectedNP[i];
                 StringAssert.AreEqualIgnoringCase(foundersNPi.FullName, fnpi.FullName, "Incorrect FullName at index {0}, must be {1} but was {2}", i, foundersNPi.FullName, fnpi.FullName);
                 StringAssert.AreEqualIgnoringCase(foundersNPi.INN, fnpi.INN, "Incorrect INN at index {0}, must be {1} but was {2}", i, foundersNPi.INN, fnpi.INN);
                 StringAssert.AreEqualIgnoringCase(foundersNPi.Share, fnpi.Share, "Incorrect Share at index {0}, must be {1} but was {2}", i, foundersNPi.Share, fnpi.Share);

@@ -11,7 +11,7 @@ namespace DocumentPreparer.Blocks
 {
     public class EstablishedEnterprisesBlock
     {
-        private string pattern = @"(\d+\.\s(?<name>[\S\s]+?)(?<address>\d+\s?,\s?[\S\s]+?)огрн:\s(?<ogrn>\d+),\sинн:\s(?<inn>\d+)[\S\s]+?(доля:\s(?<share>\d+\.\d*%)|$))";
+        private string pattern = @"(\d+\.\s)((?<name>.+?)(?<address>\d+\s?,\s?.+?)огрн:\s(?<ogrn>\d+),\sинн:\s(?<inn>\d+).*?(доля:\s(?<share>.*?)\n)?)(?=(\d+\.\s)|($))";
 
         public EstablishedEnterprisesBlock()
         {
@@ -25,7 +25,7 @@ namespace DocumentPreparer.Blocks
                     new EstablishedEnterprise()
                 };
 
-            var result = Regex.Matches(ee, pattern, RegexOptions.IgnoreCase)
+            var result = Regex.Matches(ee, pattern, RegexOptions.IgnoreCase | RegexOptions.Singleline)
                 .Cast<Match>()
                 .Where(m => m.Success)
                 .Select(m => new EstablishedEnterprise

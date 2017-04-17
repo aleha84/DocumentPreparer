@@ -65,6 +65,7 @@
     <Compile Include="DataProviders\TestDataProvider.cs" />
     <Compile Include="Data\Abisoft.cs" />
     <Compile Include="Data\Briks.cs" />
+    <Compile Include="Data\Galafor.cs" />
     <Compile Include="Data\ITestData.cs" />
     <Compile Include="Data\KTSP.cs" />
     <Compile Include="Data\Megapolis.cs" />

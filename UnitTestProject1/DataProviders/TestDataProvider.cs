@@ -19,6 +19,9 @@ namespace UnitTestProject1.DataProviders
             new object[] {Megapolis.Instance.DataName, Megapolis.Instance},
             new object[] {Abisoft.Instance.DataName, Abisoft.Instance},
             new object[] {Briks.Instance.DataName, Briks.Instance},
+            new object[] {KTSP.Instance.DataName, KTSP.Instance},
+            new object[] {OtelCity.Instance.DataName, OtelCity.Instance},
+            new object[] {Galafor.Instance.DataName, Galafor.Instance},
         };
 
         static TestDataProvider()

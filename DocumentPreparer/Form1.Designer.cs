@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ofdDocx = new System.Windows.Forms.OpenFileDialog();
             this.btnProcess = new System.Windows.Forms.Button();
+            this.lblVersion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbInputPdfPath
@@ -109,11 +110,21 @@
             this.btnProcess.UseVisualStyleBackColor = true;
             this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
             // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Location = new System.Drawing.Point(638, 141);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(35, 13);
+            this.lblVersion.TabIndex = 7;
+            this.lblVersion.Text = "label3";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 232);
+            this.ClientSize = new System.Drawing.Size(762, 172);
+            this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.btnProcess);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -122,7 +133,7 @@
             this.Controls.Add(this.btnSelectPdf);
             this.Controls.Add(this.tbInputPdfPath);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Конвертер документов";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -140,6 +151,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.OpenFileDialog ofdDocx;
         private System.Windows.Forms.Button btnProcess;
+        private System.Windows.Forms.Label lblVersion;
     }
 }
 

@@ -49,9 +49,14 @@ namespace UnitTestProject1.Data
                                 INN = "611801993362",
                                 Share = "100"
                             }
+                        },
+                        EstablishedEnterprise = new []
+                        {
+                            new EstablishedEnterprise()
                         }
                     },
                     Blocks2 = null,
+                    
                 };
             }
         }

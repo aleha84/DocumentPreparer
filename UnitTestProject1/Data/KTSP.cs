@@ -61,7 +61,11 @@ namespace UnitTestProject1.Data
                                 OGRN = null,
                                 Share = "2,25"
                             }
-                        }
+                        },
+                            EstablishedEnterprise = new []
+                            {
+                                new EstablishedEnterprise()
+                            }
                     },
                 };
             }

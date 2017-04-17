@@ -30,6 +30,8 @@ namespace DocumentPreparer
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            lblVersion.Text = string.Format("Версия: {0}", Application.ProductVersion);
+
             ofdPdf.InitialDirectory = applicationDirectory;
             ofdPdf.Filter = "pdf файлы (*.pdf)|*.pdf";
             ofdPdf.Multiselect = false;

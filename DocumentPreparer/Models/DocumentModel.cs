@@ -15,6 +15,7 @@ namespace DocumentPreparer.Models
             FoundersLE = new FounderLE[] {new FounderLE()};
             FoundersNP = new FounderNP[] { new FounderNP() };
             Licenses = new License[] { new License() };
+            EstablishedEnterprise = new[] {new EstablishedEnterprise()};
         }
 
         public Common Common { get; set; }

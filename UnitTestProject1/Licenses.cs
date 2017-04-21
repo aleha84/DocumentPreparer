@@ -19,18 +19,18 @@ namespace UnitTestProject1
         [TestCaseSource(typeof(TestDataProvider), "TestCaseSources")]
         public void Get(string DataName, ITestData testData)
         {
-            if(DataName == "Lanit")
+            var lBlock = new LicensesBlock();
+
+            var result = lBlock.GetLicenses(testData.Blocks2.GetByKeyOrEmpty(BlockHeadersRefs.ExtractFromEGRUL));
+
+            Assert.AreEqual(testData.DocumentModel.Licenses.Length, result.Length, "Count is wrong");
+            for (var i = 0; i < testData.DocumentModel.Licenses.Length; i++)
             {
+                var expected = testData.DocumentModel.Licenses[i];
+                var actual = result[i];
 
-                var lBlock = new LicensesBlock();
-
-                var result = lBlock.GetLicenses(testData.Blocks2.GetByKeyOrEmpty(BlockHeadersRefs.ExtractFromEGRUL));
-
-                Assert.Fail();
+                StringAssert.AreEqualIgnoringCase(expected.Value, actual.Value, string.Format("Index [{0}]", i));
             }
-            
-
-            Assert.Pass();
         }
     }
 }

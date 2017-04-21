@@ -32,3 +32,11 @@ D:\development\docsProcesser\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\О
 D:\development\docsProcesser\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\ООО КОМПАНИЯ РВС бизнес справка.pdf
 D:\development\docsProcesser\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\ООО ОТЕЛЬ СИТИ бизнес справка.pdf
 D:\development\docsProcesser\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\ЗАО ЛАНИТ бизнес справка.pdf
+C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\дочерние компании ООО ГАЛАФОР бизнес справка.pdf
+C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\иной-негатив-изменение-наименования АО БРИКС ИТ бизнес справка.pdf
+C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\недобросовестный-поставщик ООО АБИСОФТ бизнес справка.pdf
+C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\ОО КОМПАНИЯ НОВЫЙ ДИАЛОГ бизнес справка.pdf
+C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\ООО ВЕКТОР ЧИСТОТЫ бизнес справка.pdf
+C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\ООО КОМПАНИЯ РВС бизнес справка.pdf
+C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\ООО ОТЕЛЬ СИТИ бизнес справка.pdf
+C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\ЗАО ЛАНИТ бизнес справка.pdf

@@ -92,7 +92,7 @@ namespace DocumentPreparer.Processers
 
             result.EstablishedEnterprise = _establishedEnterprisesBlock.Get(blocks.ContainsKey(BlockHeadersRefs.EstablishedEnterprises) ? blocks[BlockHeadersRefs.EstablishedEnterprises] : string.Empty);
 
-            result.Licenses = _licensesBlockBlock.GetLicenses(blocks.GetByKeyOrEmpty(BlockHeadersRefs.ExtractFromEGRUL));
+            result.Licenses = _licensesBlockBlock.GetLicenses(blocks.GetByKeyOrEmpty(BlockHeadersRefs.ExtractFromEGRUL)).Reverse().ToArray();
 
             return result;
         }

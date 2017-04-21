@@ -7,5 +7,6 @@ namespace DocumentPreparer.Models
 {
     public class License
     {
+        public string Value { get; set; }
     }
 }

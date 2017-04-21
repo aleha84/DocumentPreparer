@@ -22,6 +22,7 @@ namespace UnitTestProject1.DataProviders
             new object[] {KTSP.Instance.DataName, KTSP.Instance},
             new object[] {OtelCity.Instance.DataName, OtelCity.Instance},
             new object[] {Galafor.Instance.DataName, Galafor.Instance},
+            new object[] {Lanit.Instance.DataName, Lanit.Instance},
         };
 
         static TestDataProvider()

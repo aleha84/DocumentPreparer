@@ -55,6 +55,7 @@
     <Compile Include="Blocks\Extractors\PdfBlocksExtractor.cs" />
     <Compile Include="Blocks\FoundersBlock.cs" />
     <Compile Include="Blocks\GeneralInfoBlock.cs" />
+    <Compile Include="Blocks\LicensesBlock.cs" />
     <Compile Include="Blocks\ManagementBlock.cs" />
     <Compile Include="Common\Common.cs" />
     <Compile Include="Extensions\DictionaryExtensions.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Models\FounderLE.cs" />
     <Compile Include="Models\FounderNP.cs" />
     <Compile Include="Models\GeneralInfoBlock.cs" />
+    <Compile Include="Models\License.cs" />
     <Compile Include="Models\ManagementBlock.cs" />
     <Compile Include="Models\PropertyRetriever.cs" />
     <Compile Include="Processers\IProcesser.cs" />

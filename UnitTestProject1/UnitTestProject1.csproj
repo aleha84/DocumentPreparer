@@ -68,15 +68,20 @@
     <Compile Include="Data\Galafor.cs" />
     <Compile Include="Data\ITestData.cs" />
     <Compile Include="Data\KTSP.cs" />
+    <Compile Include="Data\Lanit.cs" />
     <Compile Include="Data\Megapolis.cs" />
     <Compile Include="Data\OtelCity.cs" />
     <Compile Include="EstablishedEnterpriseTests.cs" />
     <Compile Include="Founders.cs" />
     <Compile Include="GeneralInfo.cs" />
+    <Compile Include="Licenses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PDFs\дочерние компании ООО ГАЛАФОР бизнес справка.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PDFs\ЗАО ЛАНИТ бизнес справка.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="PDFs\иной-негатив-изменение-наименования АО БРИКС ИТ бизнес справка.pdf">

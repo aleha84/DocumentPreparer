@@ -31,3 +31,4 @@ D:\development\docsProcesser\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\О
 D:\development\docsProcesser\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\ООО ВЕКТОР ЧИСТОТЫ бизнес справка.pdf
 D:\development\docsProcesser\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\ООО КОМПАНИЯ РВС бизнес справка.pdf
 D:\development\docsProcesser\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\ООО ОТЕЛЬ СИТИ бизнес справка.pdf
+D:\development\docsProcesser\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\ЗАО ЛАНИТ бизнес справка.pdf

@@ -23,6 +23,7 @@ namespace DocumentPreparer.Processers
         private Blocks.GeneralInfoBlock _generalInfoBlock;
         private Blocks.FoundersBlock _foundersBlock;
         private Blocks.EstablishedEnterprisesBlock _establishedEnterprisesBlock;
+        private Blocks.LicensesBlock _licensesBlockBlock;
 
         private readonly Dictionary<string, PropertyRetriever> propertiesRetrieversNamed;
         private Dictionary<string, PropertyRetriever> blocksRetrieversNamed;
@@ -45,6 +46,7 @@ namespace DocumentPreparer.Processers
             _generalInfoBlock = new Blocks.GeneralInfoBlock(propertiesRetrieversNamed);
             _foundersBlock = new Blocks.FoundersBlock(propertiesRetrieversNamed);
             _establishedEnterprisesBlock = new Blocks.EstablishedEnterprisesBlock();
+            _licensesBlockBlock = new Blocks.LicensesBlock();
         }
 
         
@@ -89,6 +91,8 @@ namespace DocumentPreparer.Processers
             result.FoundersNP = _foundersBlock.GetNP();
 
             result.EstablishedEnterprise = _establishedEnterprisesBlock.Get(blocks.ContainsKey(BlockHeadersRefs.EstablishedEnterprises) ? blocks[BlockHeadersRefs.EstablishedEnterprises] : string.Empty);
+
+            result.Licenses = _licensesBlockBlock.GetLicenses(blocks.GetByKeyOrEmpty(BlockHeadersRefs.ExtractFromEGRUL));
 
             return result;
         }

@@ -14,6 +14,7 @@ namespace DocumentPreparer.Models
             ManagementBlock = new ManagementBlock();
             FoundersLE = new FounderLE[] {new FounderLE()};
             FoundersNP = new FounderNP[] { new FounderNP() };
+            Licenses = new License[] { new License() };
         }
 
         public Common Common { get; set; }
@@ -24,5 +25,7 @@ namespace DocumentPreparer.Models
         public FounderNP[] FoundersNP { get; set; }
 
         public EstablishedEnterprise[] EstablishedEnterprise { get; set; }
+
+        public License[] Licenses { get; set; }
     }
 }

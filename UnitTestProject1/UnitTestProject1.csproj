@@ -74,6 +74,7 @@
     <Compile Include="EstablishedEnterpriseTests.cs" />
     <Compile Include="Founders.cs" />
     <Compile Include="GeneralInfo.cs" />
+    <Compile Include="GovernmentContracts.cs" />
     <Compile Include="Licenses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

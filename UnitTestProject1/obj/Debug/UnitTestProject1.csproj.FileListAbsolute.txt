@@ -40,3 +40,4 @@ C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\PDF
 C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\ООО КОМПАНИЯ РВС бизнес справка.pdf
 C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\ООО ОТЕЛЬ СИТИ бизнес справка.pdf
 C:\development\docsProcesser_src\DocumentPreparer\UnitTestProject1\bin\Debug\PDFs\ЗАО ЛАНИТ бизнес справка.pdf
+D:\development\docsProcesser\DocumentPreparer\UnitTestProject1\bin\Debug\template.docx

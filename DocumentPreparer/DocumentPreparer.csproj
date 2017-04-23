@@ -50,11 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\ArrayItemAdditionAttribute.cs" />
     <Compile Include="Blocks\EstablishedEnterprisesBlock.cs" />
     <Compile Include="Blocks\Extractors\IBlocksExtractor.cs" />
     <Compile Include="Blocks\Extractors\PdfBlocksExtractor.cs" />
     <Compile Include="Blocks\FoundersBlock.cs" />
     <Compile Include="Blocks\GeneralInfoBlock.cs" />
+    <Compile Include="Blocks\GovernmentContractsBlock.cs" />
     <Compile Include="Blocks\LicensesBlock.cs" />
     <Compile Include="Blocks\ManagementBlock.cs" />
     <Compile Include="Common\Common.cs" />
@@ -73,6 +75,7 @@
     <Compile Include="Models\FounderLE.cs" />
     <Compile Include="Models\FounderNP.cs" />
     <Compile Include="Models\GeneralInfoBlock.cs" />
+    <Compile Include="Models\GovernmentContract.cs" />
     <Compile Include="Models\License.cs" />
     <Compile Include="Models\ManagementBlock.cs" />
     <Compile Include="Models\PropertyRetriever.cs" />
@@ -107,10 +110,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <ContentWithTargetPath  Include="Templates\template.docx">
+    <ContentWithTargetPath Include="Templates\template.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <TargetPath>template.docx</TargetPath>
-    </ContentWithTargetPath >
+    </ContentWithTargetPath>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

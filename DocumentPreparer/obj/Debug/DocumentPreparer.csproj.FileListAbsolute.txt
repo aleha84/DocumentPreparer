@@ -24,3 +24,5 @@ C:\development\docsProcesser_src\DocumentPreparer\DocumentPreparer\obj\Debug\Doc
 C:\development\docsProcesser_src\DocumentPreparer\DocumentPreparer\obj\Debug\DocumentPreparer.Properties.Resources.resources
 C:\development\docsProcesser_src\DocumentPreparer\DocumentPreparer\obj\Debug\DocumentPreparer.csproj.GenerateResource.Cache
 C:\development\docsProcesser_src\DocumentPreparer\DocumentPreparer\bin\Debug\template.docx
+D:\development\docsProcesser\DocumentPreparer\DocumentPreparer\bin\Debug\template.docx
+D:\development\docsProcesser\DocumentPreparer\DocumentPreparer\obj\Debug\DocumentPreparer.csprojResolveAssemblyReference.cache

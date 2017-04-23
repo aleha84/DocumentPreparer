@@ -55,6 +55,51 @@ namespace UnitTestProject1.Data
                         EstablishedEnterprise = new[] {
                             new EstablishedEnterprise()
                             },
+                        GovernmentContracts = new []
+                        {
+                            new GovernmentContract
+                            {
+                                Year = 2011,
+                                Count = 4,
+                                Total = 448228.58m
+                            },
+                            new GovernmentContract
+                            {
+                                Year = 2012,
+                                Count = 17,
+                                Total = 2269558.85m
+                            },
+                            new GovernmentContract
+                            {
+                                Year = 2013,
+                                Count = 18,
+                                Total = 8153691.07m
+                            },
+                            new GovernmentContract
+                            {
+                                Year = 2014,
+                                Count = 14,
+                                Total = 5494283.12m
+                            },
+                            new GovernmentContract
+                            {
+                                Year = 2015,
+                                Count = 20,
+                                Total = 6885544.17m
+                            },
+                            new GovernmentContract
+                            {
+                                Year = 2016,
+                                Count = 10,
+                                Total = 2375796.87m
+                            },
+                            new GovernmentContract
+                            {
+                                Year = 2017,
+                                Count = 1,
+                                Total = 398720m
+                            }
+                        }
                     }, 
                     Blocks2 = null,
                 };

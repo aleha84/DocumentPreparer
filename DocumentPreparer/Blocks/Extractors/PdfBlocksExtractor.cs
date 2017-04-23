@@ -26,6 +26,7 @@ namespace DocumentPreparer.Blocks.Extractors
                 { BlockHeadersRefs.ExtractFromEGRUL, "выписка из егрюл" },
                 { BlockHeadersRefs.Affiliation, "аффилированность" },
                 { BlockHeadersRefs.EstablishedEnterprises, "информация об учрежденных предприятиях" },
+                { BlockHeadersRefs.GovernmentContracts, "проверка наличия у объекта государственных контрактов" }
             };
         }
 
@@ -33,7 +34,6 @@ namespace DocumentPreparer.Blocks.Extractors
         {
             PdfReader pdfReader;
             
-
             try
             {
                 pdfReader = new PdfReader(path);

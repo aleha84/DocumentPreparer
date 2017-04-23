@@ -13,6 +13,7 @@ namespace DocumentPreparer.Refs
         public const string ExtractFromEGRUL = "ExtractFromEGRUL";
         public const string Affiliation = "Affiliation";
         public const string EstablishedEnterprises = "EstablishedEnterprises";
+        public const string GovernmentContracts = "GovernmentContracts";
     }
 
     public static class PropertyRetrieversRefs

@@ -62,6 +62,39 @@ namespace UnitTestProject1.Data
                                 Share = "2,25"
                             }
                         },
+                            GovernmentContracts = new []
+                            {
+                                new GovernmentContract
+                                {
+                                    Year = 2013,
+                                    Count = 1,
+                                    Total = 497996.3m
+                                },
+                                new GovernmentContract
+                                {
+                                    Year = 2014,
+                                    Count = 1,
+                                    Total = 1118973.89m
+                                },
+                                new GovernmentContract
+                                {
+                                    Year = 2015,
+                                    Count = 27,
+                                    Total = 53387028.02m
+                                },
+                                new GovernmentContract
+                                {
+                                    Year = 2016,
+                                    Count = 33,
+                                    Total = 95769970.21m
+                                },
+                                new GovernmentContract
+                                {
+                                    Year = 2017,
+                                    Count = 3,
+                                    Total = 3784929.38m
+                                }
+                            },
                             Licenses = new []
                             {
                                 new License

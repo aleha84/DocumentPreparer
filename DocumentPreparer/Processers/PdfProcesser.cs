@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using DocumentPreparer.Blocks;
 using DocumentPreparer.Blocks.Extractors;
 using DocumentPreparer.Common;
 using DocumentPreparer.Refs;
@@ -24,6 +25,7 @@ namespace DocumentPreparer.Processers
         private Blocks.FoundersBlock _foundersBlock;
         private Blocks.EstablishedEnterprisesBlock _establishedEnterprisesBlock;
         private Blocks.LicensesBlock _licensesBlockBlock;
+        private Blocks.GovernmentContractsBlock _governmentContractsBlock;
 
         private readonly Dictionary<string, PropertyRetriever> propertiesRetrieversNamed;
         private Dictionary<string, PropertyRetriever> blocksRetrieversNamed;
@@ -47,6 +49,7 @@ namespace DocumentPreparer.Processers
             _foundersBlock = new Blocks.FoundersBlock(propertiesRetrieversNamed);
             _establishedEnterprisesBlock = new Blocks.EstablishedEnterprisesBlock();
             _licensesBlockBlock = new Blocks.LicensesBlock();
+            _governmentContractsBlock = new GovernmentContractsBlock();
         }
 
         
@@ -93,6 +96,9 @@ namespace DocumentPreparer.Processers
             result.EstablishedEnterprise = _establishedEnterprisesBlock.Get(blocks.ContainsKey(BlockHeadersRefs.EstablishedEnterprises) ? blocks[BlockHeadersRefs.EstablishedEnterprises] : string.Empty);
 
             result.Licenses = _licensesBlockBlock.GetLicenses(blocks.GetByKeyOrEmpty(BlockHeadersRefs.ExtractFromEGRUL)).Reverse().ToArray();
+
+            result.GovernmentContracts =
+                _governmentContractsBlock.Get(blocks.GetByKeyOrEmpty(BlockHeadersRefs.GovernmentContracts));
 
             return result;
         }

@@ -15,10 +15,12 @@ namespace DocumentPreparer.Attributes
     public class ArrayItemAdditionAttribute : Attribute
     {
         public ArrayItemAdditionType AdditionType { get; set; }
+        public string[] FieldsOrder { get; set; }
 
-        public ArrayItemAdditionAttribute(ArrayItemAdditionType additionType)
+        public ArrayItemAdditionAttribute(ArrayItemAdditionType additionType, string[] fieldsOrder = null)
         {
             AdditionType = additionType;
+            FieldsOrder = fieldsOrder;
         }
 
     }

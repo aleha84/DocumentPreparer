@@ -35,7 +35,7 @@ namespace DocumentPreparer.Models
         [ArrayItemAddition(ArrayItemAdditionType.AddAsTable)]
         public License[] Licenses { get; set; }
 
-        [ArrayItemAddition(ArrayItemAdditionType.AddAsRow)]
+        [ArrayItemAddition(ArrayItemAdditionType.AddAsRow, new [] { "Year", "Count", "Total" })]
         public GovernmentContract[] GovernmentContracts { get; set; }
     }
 }

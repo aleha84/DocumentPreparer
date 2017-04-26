@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -48,11 +49,15 @@ namespace DocumentPreparer.Processers
                     var array = (object[])propertyValue;
                     var propFullName = GetPropertyNameWithParentName(parentName, prop.Name);
                     var paragraph = docx.Paragraphs.FirstOrDefault(p => p.FindAll(propFullName).Count > 0);
+
+                    if (paragraph == null)
+                        continue;
+
                     var targetTable = paragraph.FollowingTable;
 
-                    var additionType = GetArrayItemAdditionType(prop);
+                    var arrayItemAttr = GetArrayItemAdditionType(prop);
 
-                    if(additionType == ArrayItemAdditionType.AddAsTable)
+                    if(arrayItemAttr.AdditionType == ArrayItemAdditionType.AddAsTable)
                     {
                         if (array.Length > 0)
                         {
@@ -84,11 +89,42 @@ namespace DocumentPreparer.Processers
                             }
                         }
                     }
-                    else if(additionType == ArrayItemAdditionType.AddAsRow)
+                    else if(arrayItemAttr.AdditionType == ArrayItemAdditionType.AddAsRow)
                     {
-                        var row = targetTable.InsertRow();
-                        //ADD DATA
-                        targetTable.Rows.Add(row);
+                        if (array.Length > 0)
+                        {
+                            var cellMappings = new Dictionary<string,int>();
+
+                            var arrTypeProperties = array[0].GetType().GetProperties();
+                            foreach (var arrItemProp in arrTypeProperties)
+                            {
+                                cellMappings.Add(arrItemProp.Name, Array.FindIndex(arrayItemAttr.FieldsOrder,
+                                    fo => fo.Equals(arrItemProp.Name, StringComparison.InvariantCultureIgnoreCase)));
+                            }
+
+
+                            for (var arrIndex = 0; arrIndex < array.Length; arrIndex++)
+                            {
+                                var row = targetTable.InsertRow();
+                                foreach (var arrItemProp in arrTypeProperties)
+                                {
+                                    var arryaItemPropValue = arrItemProp.GetValue(array[arrIndex], null);
+                                    row.Cells[cellMappings[arrItemProp.Name]]
+                                        .Paragraphs.First()
+                                        .Append(arryaItemPropValue.ToString());
+
+                                    row.Cells[cellMappings[arrItemProp.Name]].SetBorder(TableCellBorderType.Bottom, new Border(BorderStyle.Tcbs_single, BorderSize.one, 0, Color.Black));
+                                    row.Cells[cellMappings[arrItemProp.Name]].SetBorder(TableCellBorderType.Left, new Border(BorderStyle.Tcbs_single, BorderSize.one, 0, Color.Black));
+                                    row.Cells[cellMappings[arrItemProp.Name]].SetBorder(TableCellBorderType.Right , new Border(BorderStyle.Tcbs_single, BorderSize.one, 0, Color.Black));
+                                    row.Cells[cellMappings[arrItemProp.Name]].SetBorder(TableCellBorderType.Top, new Border(BorderStyle.Tcbs_single, BorderSize.one, 0, Color.Black));
+                                }
+                                
+                                targetTable.Rows.Add(row);
+                                
+                            }
+                        }
+
+                        paragraph.Remove(false);
                     }
 
                 }
@@ -114,9 +150,19 @@ namespace DocumentPreparer.Processers
             return string.Format("%{0}.{1}%", parentName, propName);
         }
 
-        private ArrayItemAdditionType GetArrayItemAdditionType(PropertyInfo prop)
+        private ArrayItemAdditionAttribute GetArrayItemAdditionType(PropertyInfo prop)
         {
-            var result = ArrayItemAdditionType.AddAsTable;
+            var result = new ArrayItemAdditionAttribute(ArrayItemAdditionType.AddAsTable);
+
+            var attrs = prop.GetCustomAttributes(true);
+            foreach (var attr in attrs)
+            {
+                var arrayItemAttr = attr as ArrayItemAdditionAttribute;
+                if (arrayItemAttr != null)
+                {
+                    return arrayItemAttr;
+                }
+            }
 
             return result;
         }
